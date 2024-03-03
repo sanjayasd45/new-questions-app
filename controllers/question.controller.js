@@ -6,9 +6,9 @@ module.exports.renderQuestion = WrapAsync(async(req, res, next) => {
 });
 
 module.exports.addQuestion = WrapAsync(async(req, res, next) => {
-    const {id} = req.params;
     const questionData = req.body;
     const currUserName = currUser.username;
     const newQuestionData = {...questionData, currUserName};
     const addQuestion = new Question(newQuestionData);
+    await new addQuestion.save();
 })
