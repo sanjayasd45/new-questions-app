@@ -18,7 +18,8 @@ module.exports.signup = WrapAsync(async(req, res, next) => {
 });
 
 module.exports.login = (req, res, next) => {
-    res.redirect("/question");
+    const redirectUrl = res.locals.redirectUrl || "/question";
+    res.redirect(redirectUrl);
 };
 
 module.exports.logout = (req, res, next) => {

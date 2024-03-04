@@ -2,7 +2,7 @@ const WrapAsync = require("../helper/WrapAsync.js");
 const Question = require("../models/question.model.js");
 module.exports.renderQuestion = WrapAsync(async(req, res, next) => {
     const questionData = await Question.find();
-    res.render("pages/question.ejs", questionData);
+    res.render("pages/questions.ejs", questionData);
 });
 
 module.exports.renderQuestionForm = (req, res, next) => {

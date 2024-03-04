@@ -41,6 +41,6 @@ const userSchema = new Schema({
 });
 
 userSchema.plugin(passportLM)
-const User = mongoose.Model("User", userSchema);
+const User = mongoose.model("User", userSchema);
 
 module.exports = User;
