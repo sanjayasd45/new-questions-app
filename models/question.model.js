@@ -22,6 +22,12 @@ const questionSchema = new Schema ({
         type : String,
         required : true
     },
+    answers : [
+        {
+            type : Schema.Types.ObjectId,
+            ref : "Answer"
+        }
+    ]
 },{
     timestamps : true
 });
